@@ -11,6 +11,12 @@ public class MathOperationFactory {
             case ("minus"):
                 mathService = new MathOperationMinus();
                 break;
+            case ("multiply"):
+                mathService = new MathOperationMultiply();
+                break;
+            case ("divide"):
+                mathService = new MathOperationDivide();
+                break;
             default:
                 throw new IllegalArgumentException("Unexpected value: " + operation);
         }

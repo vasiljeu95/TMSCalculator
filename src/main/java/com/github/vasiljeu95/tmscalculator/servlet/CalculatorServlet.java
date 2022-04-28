@@ -26,9 +26,9 @@ public class CalculatorServlet extends HttpServlet {
         double secondNumber = Double.parseDouble(req.getParameter("secondNumber"));
         String operation = req.getParameter("operation");
 
-        MathService mathService = MathOperationFactory.getInstance(operation);
+//        MathService mathService = MathOperationFactory.getInstance(operation);
 
-        req.setAttribute("result", mathService.mathCalculate(firstNumber, secondNumber));
+        req.setAttribute("result", MathOperationFactory.getInstance(operation).mathCalculate(firstNumber, secondNumber));
 
         getServletContext().getRequestDispatcher("/pages/calc.jsp").forward(req, resp);
     }
